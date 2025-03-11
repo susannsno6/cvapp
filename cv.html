@@ -1,59 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nepal Job CV - PDF Upload</title>
   <link rel="stylesheet" href="cv.css" /> <!-- External CSS file link -->
 </head>
-
 <body>
   <div class="container">
     <h1>Upload PDF to Nepal Job CV</h1>
-    <!-- Add this in your HTML to display the search bar -->
-
-
-
-    <!-- For testing, using a placeholder image. Replace with your image file when available. -->
     <img src="ncv logo.jpg" alt="PDF Thumbnail" class="file-thumbnail" />
-
+    
     <!-- Search Bar to filter PDFs -->
     <input type="text" id="searchInput" placeholder="Search PDFs by name..." oninput="searchPDFs()">
-<div id="pdfList"></div>  <!-- This is where the PDFs will be displayed -->
-
+    
     <!-- File input for uploading PDFs -->
     <input type="file" id="pdfInput" accept="application/pdf" />
     <button class="put" onclick="uploadPDF()">Upload PDF</button>
-
+    
     <!-- Container for PDF List -->
     <div id="pdfList" class="pdf-list-container"></div>
-
+    
     <!-- Notification area -->
     <div id="notification" class="notification"></div>
-
+    
     <p style="color: red; font-family: sans-serif;">
       <br />MAKE SURE THAT YOUR PDF FILE IS NOT MORE THAN 10MB
     </p>
-
   </div>
 
   <!-- Include JavaScript file -->
-  <script src="cv.js"></script> <!-- External JS file link -->
-
   <script>
-    // Ensure the script is loaded after the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', function () {
-      // Check login status on page load
-      checkLoginStatus();
-
-      // Handle log out functionality
-      document.getElementById('logoutButton').addEventListener('click', logout);
-
-      // Ensure the uploaded PDFs are displayed
-      displayPDFList();
-    });
+    const pdfRepoURL = "https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/pdfs/";
+    const pdfList = [
+      "sample1.pdf",
+      "sample2.pdf"
+    ];
+    
+    function displayPDFList() {
+      const pdfListContainer = document.getElementById("pdfList");
+      pdfListContainer.innerHTML = "";
+      
+      if (pdfList.length === 0) {
+        pdfListContainer.innerHTML = "<p>No PDFs available.</p>";
+        return;
+      }
+      
+      pdfList.forEach(pdf => {
+        const pdfElement = document.createElement("div");
+        pdfElement.classList.add("pdf-item");
+        pdfElement.innerHTML = `
+          <div class="pdf-details">
+            <img src="ncv logo.jpg" alt="PDF Thumbnail" class="file-thumbnail">
+            <a href="${pdfRepoURL}${pdf}" target="_blank">${pdf}</a>
+          </div>
+        `;
+        pdfListContainer.appendChild(pdfElement);
+      });
+    }
+    
+    function uploadPDF() {
+      alert("To upload PDFs, manually add them to your GitHub repository.");
+    }
+    
+    function searchPDFs() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const filteredPDFs = pdfList.filter(pdf => pdf.toLowerCase().includes(query));
+      displayPDFList(filteredPDFs);
+    }
+    
+    document.addEventListener("DOMContentLoaded", displayPDFList);
   </script>
 </body>
-
 </html>
