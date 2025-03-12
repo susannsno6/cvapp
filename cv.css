@@ -9,44 +9,11 @@ body {
     background-color: #ffe600; /* Softer yellow background */
 }
 
-#pdfList {
-    width: 100%; /* Adjust width as needed */
-    max-height: 300px; /* Set a fixed height */
-    overflow-y: auto; /* Enables vertical scrolling */
-    border: 1px solid #ccc; /* Optional: Adds a border */
-    padding: 10px;
-    background-color: #f9f9f9; /* Light background for visibility */
-    border-radius: 5px; /* Smooth edges */
-}
-
-.pdfItem {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.file-thumbnail {
-    width: 40px; /* Adjust size as needed */
-    height: auto;
-    margin-right: 10px;
-}
-
-.pdf-actions {
-    display: flex;
-    gap: 10px;
-}
-
-/* Container style */
+/* Container for PDFs */
 .container {
     text-align: center;
     width: 80%;
     max-width: 1000px;
-    height: 90%;
     background-color: white;
     padding: 30px;
     border-radius: 10px;
@@ -64,10 +31,9 @@ h1 {
     color: #333;
 }
 
-
 /* Search Bar */
 #searchInput {
-    width: 100px;
+    width: 200px;
     padding: 8px 20px;
     font-size: 16px;
     border-radius: 5px;
@@ -78,86 +44,18 @@ h1 {
     right: 80px;
 }
 
-/* General Button Style */
-button {
-    margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 16px;
-    border: none;
+/* General PDF List Style */
+#pdfList {
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Replace Button */
-.put {
-    background-color: #4CAF50; /* Green */
-    color: white;
-}
-
-/* Hover effect for the Replace button */
-.put:hover {
-    background-color: #45a049; /* Darker green */
-    transform: scale(1.05); /* Slightly enlarge the button */
-}
-
-/* Delete Button */
-.delete {
-    background-color: #f44336; /* Red */
-    color: white;
-}
-
-/* Hover effect for the Delete button */
-.delete:hover {
-    background-color: #e53935; /* Darker red */
-    transform: scale(1.05); /* Slightly enlarge the button */
-}
-
-/* Notification styles */
-.notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.5s ease-in-out;
-    z-index: 1000;
-}
-
-.notification.success { background-color: #28a745; } /* Green for success */
-.notification.warning { background-color: #ffc107; } /* Yellow for delete */
-.notification.error { background-color: #dc3545; } /* Red for errors */
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive styles for small screens */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 15px;  /* Smaller font size for h1 */
-        margin-right: 50px;
-        margin-bottom: 50px;
-    }
-
-    button {
-        width: 100%;
-        padding: 12px 20px;
-    }
-
-    #searchBar {
-        width: 100px;  /* Reduced width */
-        font-size: 14px;  /* Smaller font size */
-        margin-top: 45px; /* Adjusted margin */
-    }
-}
-
-/* General Styles for PDF List */
+/* Individual PDF Item Style */
 .pdf-item {
     display: flex;
     align-items: center;
@@ -181,108 +79,97 @@ button {
     border-radius: 5px;
 }
 
-/* Delete Button */
-.delete-btn {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.delete-btn:hover {
-    background-color: #e53935;
-    transform: scale(1.05);
-}
-.pdf-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.pdf-details {
-    display: flex;
-    align-items: center;
-}
-
-.file-thumbnail {
-    width: 40px; /* Thumbnail size */
-    height: auto;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
-.delete-btn {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.delete-btn:hover {
-    background-color: #e53935;
-    transform: scale(1.05);
-}
-.pdf-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.pdf-details {
-    display: flex;
-    align-items: center;
-}
-
-.file-thumbnail {
-    width: 40px; /* Thumbnail size */
-    height: auto;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
 .pdf-actions {
     display: flex;
     gap: 10px;
 }
 
-.replace-btn, .delete-btn {
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
+/* General Button Style */
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Upload Button */
+.upload-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.upload-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Replace Button */
 .replace-btn {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     color: white;
 }
 
 .replace-btn:hover {
-    background-color: #45a049; /* Darker green */
-    transform: scale(1.05); /* Slightly enlarge the button */
+    background-color: #45a049;
+    transform: scale(1.05);
 }
 
+/* Delete Button */
 .delete-btn {
-    background-color: #f44336; /* Red */
+    background-color: #f44336;
     color: white;
 }
 
 .delete-btn:hover {
-    background-color: #e53935; /* Darker red */
-    transform: scale(1.05); /* Slightly enlarge the button */
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+
+/* Notification styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+/* Fade-in Animation for Notifications */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    #searchInput {
+        width: 100%;
+        font-size: 14px;
+        margin-top: 45px;
+    }
+
+    /* Adjust PDF Item Layout for small screens */
+    .pdf-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
