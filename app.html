@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nepal Job CV - PDF Upload</title>
+  <link rel="stylesheet" href="webstyles.css" /> <!-- External CSS file link -->
+</head>
+
+<body>
+  <div class="container">
+    <h1>Upload PDF to Nepal Job CV</h1>
+
+    <!-- For testing, using a placeholder image. Replace with your image file when available. -->
+    <img src="https://via.placeholder.com/150" alt="PDF Thumbnail" class="file-thumbnail" />
+
+    <!-- Search Bar to filter PDFs -->
+    <input type="text" id="searchBar" placeholder="Search PDFs..." oninput="searchPDFs()" />
+
+    <!-- File input for uploading PDFs -->
+    <input type="file" id="pdfInput" accept="application/pdf" />
+    <button class="put" onclick="uploadPDF()">Upload PDF</button>
+
+    <!-- Container for PDF List -->
+    <div id="pdfList" class="pdf-list-container"></div>
+
+    <!-- Notification area -->
+    <div id="notification" class="notification"></div>
+
+    <p style="color: red; font-family: sans-serif;">
+      <br />MAKE SURE THAT YOUR PDF FILE IS NOT MORE THAN 10MB
+    </p>
+
+    <button class="put" id="logoutButton">Log Out</button>
+  </div>
+
+  <!-- Include JavaScript file -->
+  <script src="app.js"></script> <!-- External JS file link -->
+
+  <script>
+    // Ensure the script is loaded after the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Check login status on page load
+      checkLoginStatus();
+
+      // Handle log out functionality
+      document.getElementById('logoutButton').addEventListener('click', logout);
+
+      // Ensure the uploaded PDFs are displayed
+      displayPDFList();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,39 +1,3 @@
-// Array of user objects with username and password
-const users = [
-    { username: "NEPAL JOB", password: "Susan Shakya" },
-    { username: "9769761579", password: "Puspa Khanal" },
-    { username: "9813304961", password: "Srijana Shakya" },
-    { username: "9823376008", password: "Lalita Shakya" },
-    { username: "Khajuki", password: "Anjana Shakya" },
-    { username: "JOB CV", password: "Nepaljobcv@123" }
-];
-
-// Function to check login credentials
-function checkLogin() {
-    const usernameInput = document.getElementById("username").value;
-    const passwordInput = document.getElementById("password").value;
-    const errorMessage = document.getElementById("error-message");
-
-    // Check if both username and password fields are filled
-    if (!usernameInput || !passwordInput) {
-        errorMessage.textContent = "❌ Please enter both username and password";
-        return;
-    }
-
-    // Find user object that matches the entered username
-    const user = users.find(user => user.username === usernameInput);
-
-    // Validate user existence and password match
-    if (user && user.password === passwordInput) {
-        // Store logged-in user in localStorage
-        localStorage.setItem("loggedInUser", usernameInput);
-
-        // Redirect to web.html inside the same folder
-        window.location.href = "web.html";
-    } else {
-        errorMessage.textContent = "❌ Invalid Username or Password";
-    }
-}
 // Ensure the DOM is fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function () {
     // Check login status on page load

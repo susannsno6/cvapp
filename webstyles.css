@@ -1,0 +1,159 @@
+/* Page background color */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffe600; /* Softer yellow background */
+}
+
+#pdfList {
+    width: 100%; /* Adjust width as needed */
+    max-height: 300px; /* Set a fixed height */
+    overflow-y: auto; /* Enables vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Adds a border */
+    padding: 10px;
+    background-color: #f9f9f9; /* Light background for visibility */
+    border-radius: 5px; /* Smooth edges */
+}
+
+.pdfItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.file-thumbnail {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+.pdf-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Container style */
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 1000px;
+    height: 90%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Title */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+/* Search Bar */
+#searchBar {
+    width: 100px;
+    padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 80px;
+    right: 80px;
+}
+
+/* General Button Style */
+button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Replace Button */
+.put {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+/* Hover effect for the Replace button */
+.put:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Delete Button */
+.delete {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+/* Hover effect for the Delete button */
+.delete:hover {
+    background-color: #e53935; /* Darker red */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Notification styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.notification.success { background-color: #28a745; } /* Green for success */
+.notification.warning { background-color: #ffc107; } /* Yellow for delete */
+.notification.error { background-color: #dc3545; } /* Red for errors */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 15px;  /* Smaller font size for h1 */
+        margin-right: 50px;
+        margin-bottom: 50px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    #searchBar {
+        width: 100px;  /* Reduced width */
+        font-size: 14px;  /* Smaller font size */
+        margin-top: 45px; /* Adjusted margin */
+    }
+}
+
